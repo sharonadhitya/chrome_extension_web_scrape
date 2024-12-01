@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+#Title: 
+AI-Driven Web Scraping Chrome Extension with Multi-Format Data Export  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#Abstract:  
+This project is a cutting-edge Chrome extension developed for the **Chrome Built-in AI Hackathon**, designed to redefine the web scraping experience. Built using React, Vite, and Selenium, and powered by Chrome's built-in AI, the extension simplifies web scraping by analyzing and categorizing webpage data into user-friendly formats.  
 
-Currently, two official plugins are available:
+The extension enables users to dynamically scrape data from webpages, view categorized options in a responsive React-based interface, and export the selected data in multiple formats, including CSV files, PDF documents, and via an API. Chrome's AI ensures data is intelligently processed, making it easier for users to extract relevant information efficiently.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+By leveraging AI to organize complex web data and offering multi-format export options, this project is tailored for professionals in data analysis, e-commerce, and research. The solution emphasizes usability, flexibility, and seamless integration into various workflows, making it a standout tool for the Chrome Built-in AI Hackathon.  
 
-## Expanding the ESLint configuration
+Steps to Follow to use this tool on your Chrome Application:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone our project:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+              ```bash
+                 git clone https://github.com/sharonadhitya/chrome_extension_web_scrape.git
+              ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Move to the project directory:
+ 
+              ```bash
+                 cd chrome_extension_webscrape
+              ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+3. Run the command:
+
+              ```bash
+                  npm i
+              ```
+
+   All the necessary packages will be installed
+
+4. Run the Command:
+
+              ```bash
+                 npm run build
+              ```
+
+   Build file gets created
+
+5. Turn on the Developer option in your 'chrome://extensions'
+
+6. Now on your top left load unpacked option will be there click that and upload the build file
+
+7. Now you can use our extension
+
+
