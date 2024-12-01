@@ -3,7 +3,7 @@ import './App.css'
 function App() {
   return (
     <>
-    <div className="bg-black text-white w-72 p-6 rounded-lg shadow-lg flex flex-col justify-between">
+    <div className="bg-black text-white w-80 p-6 rounded-lg shadow-lg flex flex-col justify-between">
       <h1 className="text-2xl font-semibold mb-4">Web Scraping Tool</h1>
       <p className="text-sm font-light mb-6">
       This tool automates web data extraction using Selenium, enabling users to easily collect and analyze 
