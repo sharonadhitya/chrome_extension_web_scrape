@@ -15,19 +15,19 @@ Steps to Follow to use this tool on your Chrome Application:
 1. Clone our project:
 
 ```bash
-   git clone https://github.com/sharonadhitya/chrome_extension_web_scrape.git
+git clone https://github.com/sharonadhitya/chrome_extension_web_scrape.git
 ```
 
 2. Move to the project directory:
  
 ```bash
-                 cd chrome_extension_webscrape
+cd chrome_extension_webscrape
 ```
 
 3. Run the command:
 
 ```bash
-                  npm i
+npm i
 ```
 
    All the necessary packages will be installed
@@ -35,7 +35,7 @@ Steps to Follow to use this tool on your Chrome Application:
 4. Run the Command:
 
 ```bash
-                 npm run build
+npm run build
 ```
 
    Build file gets created
