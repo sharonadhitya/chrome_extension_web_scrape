@@ -103,4 +103,4 @@ const Getdata: React.FC = () => {
   );
 };
 
-export default Getdata;
+export default {Getdata,getSession};
