@@ -1,15 +1,6 @@
-import { ChevronLeftIcon } from "@heroicons/react/24/solid"  // For Heroicons v2
 function Frontpage({ onNavigate }: { onNavigate: (page: string) => void }) {
   return (
     <div className="bg-black text-white w-full h-full p-6 rounded-lg shadow-lg flex flex-col justify-between">
-      {/* Back Button */}
-      <button
-        onClick={() => onNavigate("get-data")} // Navigate to 'get-data' page
-        className="absolute top-4 left-4 p-2 bg-gray-800 rounded-full hover:bg-gray-600 focus:outline-none"
-      >
-        <ChevronLeftIcon className="w-6 h-6 text-white" />
-      </button>
-
       <div className="text-center">
         <img
           src="/path/to/extension-logo.png"
@@ -28,13 +19,14 @@ function Frontpage({ onNavigate }: { onNavigate: (page: string) => void }) {
           onClick={() => onNavigate("get-data")}
           className="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded-md text-white font-semibold focus:outline-none"
         >
-          Get Table Data
+          Use Prompts
+          
         </button>
         <button
           onClick={() => onNavigate("use-prompts")}
           className="px-6 py-2 bg-green-500 hover:bg-green-600 rounded-md text-white font-semibold focus:outline-none"
         >
-          Use Prompts
+          Get Table Data
         </button>
       </div>
     </div>
