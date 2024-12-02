@@ -3,7 +3,9 @@
     "version":"1.0.0",
     "name":"Web_Scrape_Tool",
     "action":{
-        "default_popup":"index.html"
+        "default_popup":"index.html",
+        "default_popup_width":400,
+        "default_popup_height":500
     },
     "permissions":[
         "scripting",

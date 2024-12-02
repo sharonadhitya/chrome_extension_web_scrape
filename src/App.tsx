@@ -1,15 +1,12 @@
-import Frontpage from "./component/frontpage"
-import Getdata from "./component/Getdata"
+// import { BrowserRouter as Router, Routes, Route } from "react-router  ";
+// import Frontpage from "./component/frontpage";
+// import Getdata from "./component/Getdata";
+import TableScraper from "./component/TableScraper";
 
-const App = () => {
+function App() {
   return (
-   <>
-   <div>
-    <Frontpage />
-    <Getdata/>
-   </div>
-   </>
-  )
+      <TableScraper />
+  );
 }
 
-export default App
+export default App;
