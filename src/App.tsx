@@ -1,13 +1,15 @@
-// import { BrowserRouter as Router, Routes, Route } from "react-router  ";
-// import Frontpage from "./component/frontpage";
-// import Getdata from "./component/Getdata";
-// import TableScraper from "./component/TableScraper";
-import TextScraper from "./component/TextScraper";
+import Frontpage from "./component/frontpage"
+import Getdata from "./component/Getdata"
 
-function App() {
+const App = () => {
   return (
-      <TextScraper />
-  );
+   <>
+   <div>
+    <Frontpage />
+    <Getdata/>
+   </div>
+   </>
+  )
 }
 
-export default App;
+export default App
