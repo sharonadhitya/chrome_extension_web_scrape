@@ -1,12 +1,10 @@
+// Getdata.tsx
+
 import React, { useEffect, useState } from "react";
-import { ChevronLeftIcon } from "@heroicons/react/24/solid";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid"; // For Heroicons v2 // Import back icon
 
 // Placeholder for the AI session
 let session: any = null;
-
-interface GetDataProps {
-  onNavigate: (page: string) => void;
-}
 
 async function getSession(): Promise<any> {
   try {
@@ -20,7 +18,7 @@ async function getSession(): Promise<any> {
   }
 }
 
-const Getdata: React.FC<GetDataProps> = ({ onNavigate }: { onNavigate: (page: string) => void }) => {
+const Getdata: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }) => {
   const [input, setInput] = useState<string>("");
   const [messages, setMessages] = useState<{ id: number; text: string; sender: string }[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -38,23 +36,16 @@ const Getdata: React.FC<GetDataProps> = ({ onNavigate }: { onNavigate: (page: st
     e.preventDefault();
     if (!input.trim()) return;
 
-    const userMessage = { id: messages.length + 1, text: input, sender: "You" };
-    setMessages([...messages, userMessage]);
+    const newMessage = { id: messages.length + 1, text: input, sender: "You" };
+    setMessages([...messages, newMessage]);
     setInput(""); // Reset input field
 
     try {
       setLoading(true); // Show loading indicator
-      const loadingMessage = { id: messages.length + 2, text: "AI is thinking...", sender: "System" };
-      setMessages((currentMessages) => [...currentMessages, loadingMessage]);
-      console.log(loading);
       const sessionInstance = await getSession();
       const aiResponse = await sessionInstance.prompt(input);
-
-      setMessages((currentMessages) => 
-        currentMessages.map((msg) =>
-          msg.id === loadingMessage.id ? { ...msg, text: aiResponse, sender: "Local Chrome AI" } : msg
-        )
-      );
+      const response = { id: messages.length + 2, text: aiResponse, sender: "Local Chrome AI" };
+      setMessages((currentMessages) => [...currentMessages, response]);
     } catch (e: any) {
       setError(e.message);
     } finally {
@@ -87,11 +78,7 @@ const Getdata: React.FC<GetDataProps> = ({ onNavigate }: { onNavigate: (page: st
               <div
                 key={message.id}
                 className={`p-2 mb-2 rounded-md ${
-                  message.sender === "Local Chrome AI"
-                    ? "bg-blue-500 text-white"
-                    : message.sender === "System"
-                    ? "bg-gray-400 text-white"
-                    : "bg-green-500 text-white"
+                  message.sender === "Local Chrome AI" ? "bg-blue-500 text-white" : "bg-green-500 text-white"
                 }`}
               >
                 <p>
@@ -99,6 +86,7 @@ const Getdata: React.FC<GetDataProps> = ({ onNavigate }: { onNavigate: (page: st
                 </p>
               </div>
             ))}
+            {loading && <p className="text-blue-300">AI is thinking...</p>}
           </div>
         )}
       </main>
@@ -110,7 +98,7 @@ const Getdata: React.FC<GetDataProps> = ({ onNavigate }: { onNavigate: (page: st
             value={input}
             onChange={handleInputChange}
             placeholder="Type your question here..."
-            className="flex-grow border border-gray-300 p-2 rounded-l-md focus:outline-none text-black"
+            className="flex-grow border text-black border-gray-300 p-2 rounded-l-md focus:outline-none"
           />
           <button
             type="submit"
@@ -124,5 +112,4 @@ const Getdata: React.FC<GetDataProps> = ({ onNavigate }: { onNavigate: (page: st
   );
 };
 
-export default Getdata;
-export { getSession };
+export default Getdata;  // Direct export of the Getdata component

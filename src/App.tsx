@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Frontpage from "./component/frontpage";
-import Getdata from "./component/Getdata";
-import Useprompts from "./component/UsePrompts";  // Assuming you have this component
+import Getdata from "./component/Getdata";  
+import TableScraper from "./component/TableScraper";
 
 const App: React.FC = () => {
   const [showContent, setShowContent] = useState<string>("frontpage"); // State to handle which page to show
@@ -13,14 +13,14 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <div className="App m-0 p-0 w-[400px] h-[500px] flex flex-col justify-between items-center bg-black text-white font-sans">
+      <div className="App m-0 p-0 w-[400px] h-[500px] flex flex-col justify-between items-center bg-black text- font-sans">
         {/* Conditionally render content based on state */}
         {showContent === "frontpage" ? (
           <Frontpage onNavigate={handleNavigation} />
         ) : showContent === "get-data" ? (
-          <Getdata onNavigate={handleNavigation} />
+          <Getdata onNavigate={handleNavigation} />  // Correct use of Getdata component
         ) : showContent === "use-prompts" ? (
-          <Useprompts onNavigate={handleNavigation} />
+          <TableScraper onNavigate={handleNavigation} />
         ) : (
           <div>Page not found</div>
         )}

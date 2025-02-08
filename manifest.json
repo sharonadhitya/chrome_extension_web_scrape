@@ -9,12 +9,16 @@
     },
     "permissions":[
         "scripting",
-        "aiLanguageModelOriginTrial"
+        "aiLanguageModelOriginTrial",
+        "activeTab"
     ],
     "host_permissions":[
         "http://*/*",
         "https://*/*"
     ],
-    "trial_tokens": ["Ag8hr6Hs2X6IbFVMSi+AR/EIm8xwX6MgypV+9nvk2IA2thj907JGH5vBuNzNoiYFiH7Z/B4s2Wh5J9nElUovQQMAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vYmxsYnBiZW1kcHBscGNnaGtucGloY21nZmhoaGpwZGwiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"]
+    "trial_tokens": ["Ag8hr6Hs2X6IbFVMSi+AR/EIm8xwX6MgypV+9nvk2IA2thj907JGH5vBuNzNoiYFiH7Z/B4s2Wh5J9nElUovQQMAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vYmxsYnBiZW1kcHBscGNnaGtucGloY21nZmhoaGpwZGwiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"],
+    "background":{
+        "service_worker":"background.js" 
+    }
 
 }
